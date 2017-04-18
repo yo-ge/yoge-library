@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* Quick sort implemetation from The Practice of Programming. */
+/**
+ * Quick sort implemetation from The Practice of Programming.
+ */
 #define NELEM(array) (sizeof array) / (sizeof array[0])
 
 void swap(int array[], int i, int j);
