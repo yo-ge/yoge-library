@@ -1,12 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* Quick sort implemetation from The Practice of Programming. */
+/**
+ * Quick-sort implemetation from The Practice of Programming.
+ */
+
 #define NELEM(array) (sizeof array / sizeof array[0])
 
 void swap(int array[], int i, int j);
 
-/* Quick-sorts array index of 0, 1, ... n - 1. */
+/* Quick-sorts array indexed of 0, 1, ... n - 1. */
 void quick_sort(int array[], int n) {
     if (n <= 1) {
         /* Nothing to do. */
