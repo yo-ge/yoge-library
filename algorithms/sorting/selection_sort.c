@@ -28,7 +28,9 @@ void selection_sort(int array[], int size) {
 int main() {
     int array[] = {8, 2, 4, 8, 1, 22, 3, 44, 5, 6, 2, -1, 0};
     int size = sizeof array / sizeof array[0];
+
     selection_sort(array, size);
+    
     int i;
     for (i = 0; i < size; ++i) {
         printf("%d%c", array[i], i == size - 1 ? '\n' : ' ');
