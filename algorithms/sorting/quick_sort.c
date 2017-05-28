@@ -5,7 +5,7 @@
  * Quick-sort implemetation from The Practice of Programming.
  */
 
-#define NELEM(array) (sizeof array / sizeof array[0])
+#define NITEMS(array) (sizeof array / sizeof array[0])
 
 void swap(int array[], int i, int j);
 
@@ -43,11 +43,11 @@ int main() {
                     43124, 3214, 1111, 222, 222,
                     233333, };
 
-    quick_sort(sample, NELEM(sample));
+    quick_sort(sample, NITEMS(sample));
 
     int i;
-    for (i = 0; i < NELEM(sample); ++i) {
-        printf("%d%c", sample[i], i == NELEM(sample) - 1 ? '\n' : ' ');
+    for (i = 0; i < NITEMS(sample); ++i) {
+        printf("%d%c", sample[i], i == NITEMS(sample) - 1 ? '\n' : ' ');
     }
 
     return 0;
