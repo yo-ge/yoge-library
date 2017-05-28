@@ -1,5 +1,4 @@
 import numpy as np
-import timeit
 
 def DFT_slow(x):
     """
@@ -15,5 +14,10 @@ def DFT_slow(x):
 
 
 if __name__ == '__main__':
-    x = np.random.random(1024)
-    print(np.allclose(DFT_slow(x), np.fft.fft(x))) # Output: True
+    A = np.arange(2**50)
+    B = np.arange(2**20)
+    A_star = np.fft.fft(A)
+    B_star = np.fft.fft(B)
+    C = np.dot(A_star, B_star)
+    print(np.fft.ifft(C.shape[0]))
+
