@@ -11,12 +11,17 @@ void swap(int nums[], int i, int j) {
 
 /* Bubble sorts NUMS indexed 0, 1, ... n - 1. */
 void bubble_sort(int nums[], int size) {
-    int i, j;
+    int i, j, swapped;
     for (i = 0; i < size; ++i) {
+        swapped = 0;
         for (j = 0; j < size - i - 1; ++j) {
             if (nums[j] > nums[j + 1]) {
                 swap(nums, j, j + 1);
+                swapped = 1;
             }
+        }
+        if (swapped == 0) {
+            break;
         }
     }
 }

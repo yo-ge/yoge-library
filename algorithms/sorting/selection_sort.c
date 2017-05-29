@@ -15,7 +15,7 @@ void selection_sort(int array[], int size) {
     int i, j;
     for (i = 0; i < size; ++i) {
         int min_index = i;
-        for (j = i; j < size; ++j) {
+        for (j = i + 1; j < size; ++j) {
             if (array[j] < array[min_index]) {
                 min_index = j;
             }
@@ -30,7 +30,7 @@ int main() {
     int size = sizeof array / sizeof array[0];
 
     selection_sort(array, size);
-    
+
     int i;
     for (i = 0; i < size; ++i) {
         printf("%d%c", array[i], i == size - 1 ? '\n' : ' ');
