@@ -1,2 +1,2 @@
-# Shua ti 
-Practice algorithms and data structures.
+# yoge-library
+Library of common algorithms and data structures.
