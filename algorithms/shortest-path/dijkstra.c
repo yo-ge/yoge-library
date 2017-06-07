@@ -39,10 +39,10 @@ void dijkstra_shortest_path(int root) {
             if (!visited[j] && 
                 dist[root][visiting] + dist[visiting][j] < dist[root][j]) {
                 dist[root][j] = dist[root][visiting] + dist[visiting][j];
-                visited[j] = 1;
+                path_to[j] = visiting;
             }
         }
-        int nearest = -1,min_distance = INF;
+        int nearest = -1, min_distance = INF;
         for (j = 0; j < n_nodes; ++j) {
             if (!visited[j] && dist[root][j] < min_distance) {
                 nearest = j;
