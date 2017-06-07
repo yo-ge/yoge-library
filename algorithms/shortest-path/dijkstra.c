@@ -28,28 +28,28 @@ void init_graph() {
 }
 
 void dijkstra_shortest_path(int root) {
-    int i, j;
+    int i;
     for (i = 0; i < n_nodes; ++i) {
         path_to[i] = root;
     }
     path_to[root] = VIRTUAL_ROOT;
-    int visiting = root;
-    for (i = 1; i < n_nodes; ++i) {
-        for (j = 0; j < n_nodes; ++j) {
-            if (!visited[j] && 
-                dist[root][visiting] + dist[visiting][j] < dist[root][j]) {
-                dist[root][j] = dist[root][visiting] + dist[visiting][j];
-                path_to[j] = visiting;
+    int visiting = root, remained_n_nodes = n_nodes - 1;
+    while (remained_n_nodes--) {
+        for (i = 0; i < n_nodes; ++i) {
+            if (!visited[i] && 
+                dist[root][visiting] + dist[visiting][i] < dist[root][i]) {
+                dist[root][i] = dist[root][visiting] + dist[visiting][i];
+                path_to[i] = visiting;
             }
         }
-        int nearest = -1, min_distance = INF;
-        for (j = 0; j < n_nodes; ++j) {
-            if (!visited[j] && dist[root][j] < min_distance) {
-                nearest = j;
-                min_distance = dist[root][j];
+        int nearest_remained = -1, min_distance = INF;
+        for (i = 0; i < n_nodes; ++i) {
+            if (!visited[i] && dist[root][i] < min_distance) {
+                nearest_remained = i;
+                min_distance = dist[root][i];
             }
         }
-        visiting = nearest;
+        visiting = nearest_remained;
         visited[visiting] = 1;
     }
 }
